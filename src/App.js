@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react';
 import MemoContent from './MemoContent';
-
+import TodoApp from './todo';
 
 // useEffect
 // 1. Cập nhật lại state
@@ -244,50 +244,67 @@ import MemoContent from './MemoContent';
 //  4. Dispatch
 // 
 // 
-// Bài 1 : sử dụng useReducer đơn giản
+// ---------- Bài 1 : sử dụng useReducer đơn giản ---------------------
 // 
 // 
-
+// 
 // init 
-const initState = 0;
-
+// const initState = 0;
+// 
 // actions
-const UP_ACTION = "up"
-const DOWN_ACTION = "down"
-
-
+// const UP_ACTION = "up"
+// const DOWN_ACTION = "down"
+// 
+// 
 // reducer
-
-const reducer = (state, action)=> {
-    switch(action) {
-      case UP_ACTION:
-        return state + 1
-      case DOWN_ACTION: 
-        return state - 1
-      default:
-        throw new Error("Invalid action")    
-    }
-}
-
-
-[].reduce((preValue, current)=> {
-  return preValue + current
-},0)
-
+// 
+// const reducer = (state, action)=> {
+//     switch(action) {
+//       case UP_ACTION:
+//         return state + 1
+//       case DOWN_ACTION: 
+//         return state - 1
+//       default:
+//         throw new Error("Invalid action")    
+//     }
+// }
+// 
+// 
+// example reducer in array
+// [].reduce((preValue, current)=> {
+//   return preValue + current
+// },0)
+// 
+// 
+// function App() {
+//   const [count, dispatch] = useReducer(reducer, initState)
+//   // hàm handle nhận 1 kết quả tham chiếu
+//   return (
+//     <>
+//       <div className="App m-5">
+//         <h1>Học useReducer đơn giản</h1>
+//         <h1>{count}</h1>
+//         <button className='m-2 btn btn-outline-success' onClick={()=> dispatch(UP_ACTION)}>UP</button>
+//         <button className='m-2 btn btn-outline-danger' onClick={()=> dispatch(DOWN_ACTION)}>DOWN</button>
+//       </div>
+//     </>
+//   );
+// }
+// 
+// 
+// ---------- Bài 1 : sử dụng useReducer Nâng cao - TODO APP ---------------------
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 
 function App() {
-  const [count, dispatch] = useReducer(reducer, initState)
-  // hàm handle nhận 1 kết quả tham chiếu
-  return (
-    <>
-      <div className="App m-5">
-        <h1>Học useReducer đơn giản</h1>
-        <h1>{count}</h1>
-        <button className='m-2 btn btn-outline-success' onClick={()=> dispatch(UP_ACTION)}>UP</button>
-        <button className='m-2 btn btn-outline-danger' onClick={()=> dispatch(DOWN_ACTION)}>DOWN</button>
-      </div>
-    </>
-  );
+  return(
+    <TodoApp />
+  )
 }
 
 export default App;
